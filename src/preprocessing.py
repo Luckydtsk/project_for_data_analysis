@@ -15,7 +15,6 @@ NUMERIC_FEATURES = [
     "income_annum",
     "loan_amount",
     "loan_term",
-    "cibil_score",
     "residential_assets_value",
     "commercial_assets_value",
     "luxury_assets_value",
@@ -51,7 +50,6 @@ def clean_loan_data(df: pd.DataFrame) -> pd.DataFrame:
         "income_annum",
         "loan_amount",
         "loan_term",
-        "cibil_score",
         "residential_assets_value",
         "commercial_assets_value",
         "luxury_assets_value",
@@ -105,7 +103,6 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
 
     featured["is_graduate"] = (featured["education"] == "Graduate").astype(int)
     featured["is_self_employed"] = (featured["self_employed"] == "Yes").astype(int)
-    featured["high_cibil"] = (featured["cibil_score"] >= 700).astype(int)
 
     return featured
 
